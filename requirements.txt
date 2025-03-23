@@ -1,0 +1,20 @@
+# Core Dependencies
+flask
+streamlit
+gradio
+
+# NLP & ML
+transformers
+keybert
+torch
+sentence-transformers
+
+# Web Scraping
+beautifulsoup4
+requests
+
+# Text-to-Speech
+gtts
+
+# Translation
+deep-translator
