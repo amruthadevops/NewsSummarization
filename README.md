@@ -62,11 +62,4 @@ This project fetches the latest news articles about a company, analyzes the sent
 ## Improvements
 
 * More robust web scraping with error handling and source diversity.
-*
 
-
-#   News Summarization and Text-to-Speech Application
-
-This application extracts news articles, performs sentiment analysis, and generates a Hindi TTS output.
-
-##  Project Setup
