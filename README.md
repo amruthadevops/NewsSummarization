@@ -45,8 +45,8 @@ Deployment Ready: 	Flask API & Streamlit (local/cloud)
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/news-sentiment-analysis.git
-cd news-sentiment-analysis
+git clone https://github.com/amruthadevops/NewsSummarization
+cd NewsSummarization
 ```
 #### 2. Create a Virtual Environment
 ```bash
