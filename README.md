@@ -1,65 +1,143 @@
-# News Sentiment Analysis
 
-#  Overview
-This project fetches the latest news articles about a company, analyzes the sentiment, extracts key topics, and generates a Hindi text-to-speech summary.
+# 📰 News Sentiment Analysis with  Text-to-Speech
+
+## 📌 Overview
+
+Analyze real-time company news, extract sentiment and key topics, and generate Hindi audio summaries using cutting-edge NLP and TTS technologies.
+
+
+This project fetches the latest news articles about a given company, performs sentiment analysis, extracts key topics, and generates a Hindi spoken summary using Text-to-Speech (TTS). It includes a REST API built with Flask and a user-friendly Streamlit UI.
 
 ## Features
-1. Enhance web scraping with multiple sources to avoid reliance on a single website.
-2. Improve sentiment accuracy by using fine-tuned transformers on financial/news datasets.
-3. Add multilingual support for sentiment analysis and topic extraction.
-4. Implement a more advanced Hindi TTS model for improved pronunciation.
-5. Deploy API and Streamlit UI online for public access.
 
-### Project Setup
+🔍 Real-Time News Scraping from multiple online sources.
 
-1 Clone the Repository
-    ```sh
-    git clone https://github.com/your-username/your-repository.git
-    cd your-repository ```
-2.Create a Virtual Environment
-    # Windows (PowerShell)
-     python -m venv venv
-     venv\Scripts\activate
-3.Install Dependencies
-    pip install -r requirements.txt
-4.Running the Application
-    1.Start the Flask API
-        python app.py
-    2.Start the Streamlit App
-        streamlit run app.py
+💬 Sentiment Analysis using pre-trained transformer models (Hugging Face).
+
+📌 Key Topic Extraction with KeyBERT.
+
+🗣️ Hindi Audio Summarization with Google Text-to-Speech (gTTS).
+
+🌐 RESTful API for programmatic access.
+
+🖥️ Streamlit Web App for interactive use.
+
+🌍 Multilingual Support for broader accessibility.
+
+🔓 Open-source and free — no paid API dependencies.
+## Tech Stack
 
 
-## Model Details
+Backend API:	    Flask (Python)
 
-* **Sentiment Analysis: Uses the transformers library with a pre-trained sentiment analysis model.
-* **Text-to-Speech (TTS): Uses the gTTS library to convert text to Hindi speech.
-* **Web Scraping: Uses BeautifulSoup4 and requests to extract news articles.
-* **Topic Extraction: Uses KeyBERT to identify key topics in articles.
+Frontend:   	    Streamlit
 
-## API Development
+Scraping:   	    Requests, BeautifulSoup4
 
-* The application uses Flask (or FastAPI) to provide API endpoints.
-* The main endpoint is `/news_report` (POST), which takes a JSON payload with the `company_name` and returns a JSON response containing the news report.
-* To access the API (example):
-    ```bash
-    curl -X POST -H "Content-Type: application/json" -d '{"company_name": "Tesla"}' http://your-api-endpoint/news_report
-    ```
+Sentiment Model:    Transformers (BERT-like)
 
-## API Usage
+Topic Extraction:	KeyBERT
 
-* No third-party paid APIs are used in this project.
-* All models used in the transformers library are open source.
+Text-to-Speech: 	gTTS (Google Text-to-Speech)
+
+Deployment Ready: 	Flask API & Streamlit (local/cloud)
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/news-sentiment-analysis.git
+cd news-sentiment-analysis
+```
+#### 2. Create a Virtual Environment
+```bash
+# For Windows
+python -m venv venv
+venv\Scripts\activate
+
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+#### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
 
-## Assumptions & Limitations
 
-* Web scraping is dependent on the structure of the target websites. Changes to those websites can break the scraping functionality.
-* Sentiment analysis models may not fully capture complex opinions or sarcasm.
-* Hindi TTS output quality depends on gTTS, which may not always produce perfect pronunciation.
-* Input validation is limited (Assumes valid company names).
-* Error handling is implemented for basic cases but may need further refinement for production use.
 
-## Improvements
+## Running the Application
 
-* More robust web scraping with error handling and source diversity.
+#### 1. Start the Flask API
+```bash
+python app.py
+```
 
+#### 2. Start the Streamlit UI
+```bash
+streamlit run app.py
+```
+
+##  API Usage
+
+#### Endpoint: /news_report (POST)
+Request Payload:
+```bash
+json
+{
+  "company_name": "Tesla"
+}
+```
+Example CURL:
+```bash
+curl -X POST -H "Content-Type: application/json" \ -d '{"company_name": "Tesla"}' \http://localhost:5000/news_report
+```
+Response:
+```json
+{
+  "summary": "Tesla stock surges amid strong quarterly results...",
+  "sentiment": "Positive",
+  "topics": ["electric vehicles", "earnings", "Elon Musk"]
+}
+```
+
+
+## 🧪 Model Details
+Sentiment Analysis: Transformer models fine-tuned on financial/news datasets.
+
+Topic Extraction: KeyBERT leverages BERT embeddings for keyword generation.
+
+Hindi TTS: gTTS supports Hindi conversion and playback of summary text.
+
+## ⚠️ Assumptions & Limitations
+Website structure changes may break web scraping.
+
+Sentiment analysis may misclassify sarcasm or mixed sentiments.
+
+TTS output is limited to gTTS’s pronunciation capabilities.
+
+Currently optimized for Hindi language; support for others is experimental.
+
+No rate limiting or authentication yet — not production-hardened.
+
+## 🔄 Future Improvements
+📰 Add more diverse and resilient news sources.
+
+🧠 Train or fine-tune sentiment models on financial news.
+
+🌐 Add support for other languages (e.g., Tamil, Bengali, English).
+
+🎙️ Integrate advanced Hindi TTS like Coqui or NVIDIA FastSpeech.
+
+☁️ Deploy on AWS/GCP with public endpoints and authentication.
+## Authors
+
+- [@Amrutha](https://github.com/amruthadevops?tab=overview&from=2025-02-01&to=2025-02-28)
+
+- [@LinkedIn ](https://www.linkedin.com/in/amrutha-c-4a2362280/?trk=opento_sprofile_details)
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+This project is licensed under the MIT License — feel free to use, contribute, and share!
